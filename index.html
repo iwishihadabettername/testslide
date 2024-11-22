@@ -12,10 +12,21 @@
 <body>
     <img id="slideshow" src="" alt="Slideshow">
     <script>
-        const images = ["image1.png", "image2.webp", "image3.jpg"]; // Add your images
-        const minInterval = 2000; // 2 seconds
-        const maxInterval = 10000; // 10 seconds
+        // List of image filenames (adjust paths as needed)
+        const images = ["red.jpg", "green.jpg", "yellow.jpg"];
 
+        const minInterval = 3000; // 3 seconds
+        const maxInterval = 12000; // 12 seconds
+
+        // Function to shuffle the images array
+        function shuffleArray(arr) {
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]]; // Swap elements
+            }
+        }
+
+        // Function to get a random interval time
         function getRandomInterval() {
             return Math.floor(Math.random() * (maxInterval - minInterval + 1)) + minInterval;
         }
@@ -24,10 +35,18 @@
             const imgElement = document.getElementById("slideshow");
             let index = 0;
 
+            // Shuffle the images before starting
+            shuffleArray(images);
+
+            // Function to show the next image
             function nextImage() {
                 imgElement.src = images[index];
-                index = (index + 1) % images.length;
-                setTimeout(nextImage, getRandomInterval());
+                index = (index + 1) % images.length;  // Loop through the images
+                if (index === 0) {
+                    // Reshuffle the images after each loop
+                    shuffleArray(images);
+                }
+                setTimeout(nextImage, getRandomInterval()); // Wait for the next random interval
             }
 
             nextImage();
