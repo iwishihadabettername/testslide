@@ -1,57 +1,39 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<!-- saved from url=(0055)file:///Users/joel/Desktop/RedLightSlideShow/index.html -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2487.3">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; -webkit-text-stroke: #000000}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; -webkit-text-stroke: #000000; min-height: 17.0px}
-    span.s1 {font-kerning: none}
-  </style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Slideshow</title>
+    <style>
+        body { margin: 0; display: flex; justify-content: center; align-items: center; background: black; height: 100vh; }
+        img { max-width: 100%; max-height: 100%; }
+    </style>
 </head>
 <body>
-<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
-<p class="p1"><span class="s1">&lt;html&gt;</span></p>
-<p class="p1"><span class="s1">&lt;head&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">&nbsp; &nbsp; </span>&lt;meta charset="UTF-8"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">&nbsp; &nbsp; </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">&nbsp; &nbsp; </span>&lt;title&gt;Random Slideshow&lt;/title&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">&nbsp; &nbsp; </span>&lt;style&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>body { margin: 0; display: flex; justify-content: center; align-items: center; background: black; height: 100vh; }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>img { max-width: 100%; max-height: 100%; }</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">&nbsp; &nbsp; </span>&lt;/style&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
-<p class="p1"><span class="s1">&lt;body&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">&nbsp; &nbsp; </span>&lt;img id="slideshow" src="" alt="Slideshow"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">&nbsp; &nbsp; </span>&lt;script&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>const images = ["image1.png”, "image2.webp”, "image3.png”]; // Add your images</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>const minInterval = 2000; // 2 seconds</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>const maxInterval = 10000; // 10 seconds</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>function getRandomInterval() {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>return Math.floor(Math.random() * (maxInterval - minInterval + 1)) + minInterval;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>function startSlideshow() {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>const imgElement = document.getElementById("slideshow");</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>let index = 0;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>function nextImage() {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>imgElement.src = images[index];</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>index = (index + 1) % images.length;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>setTimeout(nextImage, getRandomInterval());</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>nextImage();</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">&nbsp; &nbsp; &nbsp; &nbsp; </span>startSlideshow();</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">&nbsp; &nbsp; </span>&lt;/script&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+    <img id="slideshow" src="" alt="Slideshow">
+    <script>
+        const images = ["image1.jpg", "image2.jpg", "image3.jpg"]; // Add your images
+        const minInterval = 2000; // 2 seconds
+        const maxInterval = 10000; // 10 seconds
 
+        function getRandomInterval() {
+            return Math.floor(Math.random() * (maxInterval - minInterval + 1)) + minInterval;
+        }
 
-</body></html>
+        function startSlideshow() {
+            const imgElement = document.getElementById("slideshow");
+            let index = 0;
+
+            function nextImage() {
+                imgElement.src = images[index];
+                index = (index + 1) % images.length;
+                setTimeout(nextImage, getRandomInterval());
+            }
+
+            nextImage();
+        }
+
+        startSlideshow();
+    </script>
+</body>
+</html>
